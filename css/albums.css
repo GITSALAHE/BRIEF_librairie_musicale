@@ -1,0 +1,14 @@
+/* Albums */
+#albums img{
+  width: 100%;
+  filter: grayscale(100%);
+}
+
+#albums img:hover{
+  filter: grayscale(0);
+}
+
+/* Style Martin Garrix Page  */
+.h-400{
+  height: 400px;
+}
