@@ -1,0 +1,33 @@
+
+header img{
+    width: 200px;
+}
+body{
+    background-color: #383634;
+}
+.nav{
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+}
+.nav li a{
+    text-decoration: none;
+    color: white;
+    margin-left: 10px;
+}
+.navbar-nav li a{
+    color: white !important;
+}
+.navbar-nav{
+    margin-right: 0 !important;
+    margin-left: 47%;
+    font-family: 'Poppins', sans-serif;
+}
+@media (max-width : 992px){
+    .navbar{
+        background-color: white;
+    }
+}
