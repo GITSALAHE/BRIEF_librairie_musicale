@@ -1,0 +1,10 @@
+/* Albums */
+#albums img{
+  width: 100%;
+  height: 400px;
+  filter: grayscale(100%);
+}
+
+#albums img:hover{
+  filter: grayscale(0);
+}
