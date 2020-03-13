@@ -46,13 +46,14 @@ body{
 }
 .des {
     color: #696C73;
+    padding: 11px;
 }
 .art a{
     color: white;
 }
 footer{
-    position: absolute;
-    bottom: 0;
+    position: relative;
+    top: 92px;
     width: 100%;
     color: white;
     background: #343a40!important;
@@ -65,7 +66,7 @@ footer{
     margin-top: 12px;
 }
 #mu-search.mu-search-open {
-    transform: translateY(0) scale(1);
+   
 }
 
 #mu-search {
@@ -75,9 +76,7 @@ footer{
     opacity: 1;
     position: fixed;
     top: 0;
-    -moz-transition: all 0.5s ease-in-out 0s;
-    -ms-transition: all 0.5s ease-in-out 0s;
-    -o-transition: all 0.5s ease-in-out 0s;
+    transform: translateY(-100%) scale(0);
     transition: all 0.5s ease-in-out 0s;
     width: 100%;
     z-index: 99999;
@@ -104,5 +103,28 @@ footer{
     width: 50px;
 }
 #mu-search .mu-search-area .mu-search-close {
-    background-color: #01bafd;
+    background-color: violet;
+}
+#btn {
+    float: right;
+    margin-top: 72px;
+    margin-right: 28px;
+    border-color: violet;
+    color: violet;
+}
+#btn:hover{
+    background-color: violet;
+    border-color:violet ;
+    color: white;
+}
+.input-group-text{
+    background: violet;
+    border: violet;
+    color: white;
+}
+.tydes{
+    padding: 11px;
+}
+.art h1{
+    padding: 11px;
 }
