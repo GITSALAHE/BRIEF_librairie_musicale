@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Coldplay | Albums</title>
+        <title>Avicci | Morceaux</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
@@ -15,13 +15,14 @@
     <body>
       <!-- Navbar -->
       <nav class="navbar navbar-expand-lg bg-dark">
-        <a class="navbar-brand" href="../index.html">
-            <img src="../img/logo.png" width="30" height="30" class="d-inline-block align-top" alt="Logo" style="width: 76px;height: 64px;">
+        <a class="navbar-brand" href="#">
+            <img src="img/logo.png" width="30" height="30" class="d-inline-block align-top" alt="Logo" style="width: 76px;height: 64px;">
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
       
+        <!-- Nav bar items and links -->
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto" >
             <li class="nav-item active">
@@ -29,7 +30,7 @@
             </li>
             
             <li class="nav-item">
-              <a class="nav-link" href="../albums.html">Albums</a>
+              <a class="nav-link" href="../album/albums.html">Albums</a>
             </li>
             
             <li class="nav-item">
@@ -40,28 +41,29 @@
         </div>
       </nav>
 
-      <!-- Albums -->
+      <!-- Martin Garrix Morceaux -->
       <div class="container mt-4">
-        <div class="row" id="albums">
-          <div class="col-sm-4 mt-2">
-            <a href="#">
-              <img class="h-400" src="../img/albums/coldplay/album1.jpg" alt="Coldplay">
-            </a>
-          </div>
-          
-          <div class="col-sm-4 mt-2">
-            <a href="#">
-              <img class="h-400" src="../img/albums/coldplay/album2.jpg" alt="Coldplay">
-            </a>
-          </div>
+        <div class="row container">
+            <img class="col-lg-6" src="../img/avicii.jpg" alt="Avicci Picture">
+            
+            <!-- Infos about Avicci -->
+            <div class="col border rounded mt-2">
+                <div class="h1 text-white text-center">Avicci</div>
+                <div class="h4 text-white">Born at 8 September 1989</div>
+                <div class="h4 text-white">Instruments : Piano</div>
+                <div class="h4 text-white">Occupation : Dj</div>
+                <div class="h4 text-white">Album : Gold Skies</div>
+                <div class="h4 text-white">Site: <a target="_blank" href="https://www.avicii.com" class="text-white">www.avicii.com</a></div>
+            </div>
+        </div>
 
-          <div class="col-sm-4 mt-2">
-            <a href="#">
-              <img class="h-400" src="../img/albums/coldplay/album3.jpg" alt="Coldplay">
-            </a>
-          </div>
+        <!-- Album Gold Skies Songs -->
+        <div class="row mt-2 d-flex flex-column">
+            <div class="h1 bg-dark text-white text-center border p-2 mt-2">Singers Album Songs</div>
+            <div class="p-3 mb-2 row h1 rounded bg-white d-flex justify-content-center text-muted ">Sos</div>
+            <div class="p-3 mb-2 row h1 rounded bg-white d-flex justify-content-center text-muted">Tough Love</div> 
+            <div class="p-3 mb-2 row h1 rounded bg-white d-flex justify-content-center text-muted">Heaven</div> 
         </div>
       </div>
-
     </body>
 </html>
