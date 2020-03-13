@@ -7,29 +7,34 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-        <link rel="shortcut icon" href="img/logo.png" type="image/x-icon">
+        <link rel="shortcut icon" href="../img/logo.png" type="image/x-icon">
         <link rel="stylesheet" href="../css/albums.css">
         <link rel="stylesheet" href="../css/main.css">
-        <!-- <link rel="stylesheet" href="css/albumMedia.css"> -->
     </head>
     <body>
+      <!-- ################################################### Navbar Start ################################################### -->
       <!-- Navbar -->
       <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+        <!-- Logo -->
         <a class="navbar-brand" href="../index.html">
             <img src="../img/logo.png" width="30" height="30" class="d-inline-block align-top" alt="" style="width: 172px;">
           </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-      
+        
+        <!-- Navbar Items -->
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto" >
+
             <li class="nav-item active">
-              <a class="nav-link" href="../index.html">Home <span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="../index.html">Home</a>
             </li>
+
             <li class="nav-item">
               <a class="nav-link" href="#">Albums</a>
             </li>
+
             <li class="nav-item">
               <a class="nav-link " href="#">About</a>
             </li>
@@ -37,10 +42,13 @@
           
         </div>
       </nav>
+      <!-- ################################################### Navbar END ################################################### -->
       
-      <!-- Albums -->
+      <!-- ################################################### Albums Start ################################################### -->
       <div class="container mt-4">
+        <!-- First Row Of Albums -->
         <div class="row" id="albums">
+
           <!-- Martin Garrix ALbum -->
           <div class="col-lg-4 mt-2">
             <a href="../morceaux/martin.html" class="d-flex flex-wrap">
@@ -70,45 +78,11 @@
               <!-- <img class="h-50 w-50" src="img/albums/martin/album3.jpg" alt="Martin Garrix"> -->
             </a>
           </div>
+
         </div>
 
-        <!-- Forms -->
-          
-          <div class="container mt-4" style="justify-content: center;">
-            <div class="row">
-              <div class="col" >
-                  <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                      <span class="input-group-text" id="inputGroup-sizing-default">Url picture &nbsp &nbsp &nbsp</span>
-                    </div>
-                    <input type="text" class="form-control" aria-label="w-100" aria-describedby="inputGroup-sizing-default" id="image">
-                  </div>
-
-                <div class="input-group mb-3">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text" id="inputGroup-sizing-default">Name of artist</span>
-                  </div>
-                  <input type="text" class="form-control" aria-label="w-100" aria-describedby="inputGroup-sizing-default" id="name">
-                </div>
-
-                <div class="input-group mb-3">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text" id="inputGroup-sizing-default">Type music &nbsp &nbsp &nbsp</span>
-                  </div>
-                  <input type="text" class="form-control" aria-label="w-100" aria-describedby="inputGroup-sizing-default" id="tymusic">
-                </div>
-
-                <div class="input-group mb-3">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text" id="inputGroup-sizing-default">Description &nbsp &nbsp &nbsp</span>
-                  </div>
-                  <input type="text" class="form-control" aria-label="w-100" aria-describedby="inputGroup-sizing-default" id="des">
-                </div>
-
-                <button type="button" style="float: none;margin-top: 0px;margin-right: 0px;" id="btn" class="btn btn-outline-success waves-effect" onclick="newArt()">Add an Artist</button>
-              </div>
-            </div>
-          </div>
       </div>
+      <!-- ################################################### Albums End ################################################### -->
+
     </body>
 </html>
