@@ -7,6 +7,11 @@
         display: flex !important;
         flex-direction: column !important;
     }
+
+    #rwall{
+        display: flex;
+        flex-direction: column;
+    }
 }
 
 /* Large devices (laptops/desktops, 992px and up) */
