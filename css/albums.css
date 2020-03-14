@@ -31,3 +31,11 @@
 #al{
   margin-right: 10px;
 }
+
+/* Audios */
+.audios{
+  background-color: #f1f3f4;
+}
+audio::-webkit-media-controls-panel{
+  background-color: #f1f3f4;
+}

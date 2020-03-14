@@ -24,7 +24,7 @@ function show(){
     var srcname = document.getElementById("name").value;
     var srctydes = document.getElementById("tymusic").value;
     var srcdes = document.getElementById("des").value; 
-    col.className = "col-md-4";
+    col.className = "col";
     art.className = "art";
     imgart.setAttribute("src", srcimg);
     all.appendChild(col);

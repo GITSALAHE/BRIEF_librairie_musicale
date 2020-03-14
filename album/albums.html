@@ -16,6 +16,7 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
         <link rel="stylesheet" href="../css/albums.css">
         <link rel="stylesheet" href="../css/main.css">
+        <link rel="stylesheet" href="../css/media.css">
     </head>
     <body>
       <!-- ################################################### Navbar Start ################################################### -->
@@ -54,7 +55,7 @@
       <div class="container">
         <div class="w-100 d-flex" id="albums" style="margin-top: 35px;">
           <!-- Martin Garrix ALbum -->
-          <div class="col-md-4 " id="al">
+          <div class="col-md-4 mt-2" id="al">
             <a href="../morceaux/martin.html" class="d-flex flex-wrap">
               <img class="h-50 w-100" src="../img/albums/martin/album1.png" alt="Martin Garrix">
               <img class="h-50 w-50" src="../img/albums/martin/album2.jpg" alt="Martin Garrix">
@@ -66,7 +67,7 @@
           </div>  
           
           <!-- Avicci Album -->
-          <div class="col-md-4" id="al">
+          <div class="col-md-4 mt-2" id="al">
             <a href="../morceaux/avicci.html" class="d-flex flex-wrap">
               <img class="h-50 w-100" src="../img/albums/avicci/album1.jpg" alt="Avicci">
               <img class="h-50 w-50" src="../img/albums/avicci/album2.jpg" alt="Avicci">
@@ -79,7 +80,7 @@
           </div>
 
           <!-- Coldplay Album -->
-          <div class="col-md-4" id="al">
+          <div class="col-md-4 mt-2" id="al">
             <a href="../morceaux/coldplay.html" class="d-flex flex-wrap">
               <img class="h-50 w-100" src="../img/albums/coldplay/album1.jpg" alt="Coldplay">
               <img class="h-50 w-50" src="../img/albums/coldplay/album2.jpg" alt="Coldplay">
@@ -92,49 +93,55 @@
 
         </div>
 
+        <!-- For Adding new elements -->
+        <div class="row mt-2" id="rwall">
+
+        </div>
+
       </div>
       <div id="mu-search" class="mu-search-open">
-        <div class="mu-search-area" style="display: flex;
-        justify-content: center;
-        align-items: center;">      
+        <div class="mu-search-area" style="display: flex;justify-content: center;align-items: center;">      
           <button class="mu-search-close" onclick="hide()"><span class="fa fa-close"></span></button>
-          <div class="container" style="justify-content: center;">
+          <div class="container" style="justify-content: center;" >
             <div class="row">
-          <div class="col" >
-          <div class="input-group mb-3">
-            <div class="input-group-prepend">
-              <span class="input-group-text" id="inputGroup-sizing-default">Url picture &nbsp &nbsp &nbsp</span>
-            </div>
-            <input type="text" class="form-control" aria-label="w-100" aria-describedby="inputGroup-sizing-default" id="image">
-          </div>
-          <div class="input-group mb-3">
-            <div class="input-group-prepend">
-              <span class="input-group-text" id="inputGroup-sizing-default">Name of album</span>
-            </div>
-            <input type="text" class="form-control" aria-label="w-100" aria-describedby="inputGroup-sizing-default" id="name">
-          </div>
-          <div class="input-group mb-3">
-            <div class="input-group-prepend">
-              <span class="input-group-text" id="inputGroup-sizing-default">Type album &nbsp &nbsp &nbsp</span>
-            </div>
-            <input type="text" class="form-control" aria-label="w-100" aria-describedby="inputGroup-sizing-default" id="tymusic">
-          </div>
-          
-          <button type="button" id="btn" class="btn btn-outline-success waves-effect" onclick="newArt()">Add an Album</button>
-        </div>
-        </div>
-        </div>
-        </div>
-        </div>
 
+               <div class="col" >
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                        <span class="input-group-text" id="inputGroup-sizing-default">Url picture &nbsp &nbsp &nbsp</span>
+                    </div>
+                    <input type="text" class="form-control" aria-label="w-100" aria-describedby="inputGroup-sizing-default" id="image">
+                  </div>
 
-      <footer style="top: 346px;">
+                  <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text" id="inputGroup-sizing-default">Name of album</span>
+                    </div>
+                    <input type="text" class="form-control" aria-label="w-100" aria-describedby="inputGroup-sizing-default" id="name">
+                  </div>
+
+                  <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text" id="inputGroup-sizing-default">Type album &nbsp &nbsp &nbsp</span>
+                    </div>
+                    <input type="text" class="form-control" aria-label="w-100" aria-describedby="inputGroup-sizing-default" id="tymusic">
+                  </div>
+              
+                  <button type="button" id="btn" class="btn btn-outline-success waves-effect" onclick="newArt()">Add an Album</button>
+               </div>
+
+              </div>
+            </div>
+        </div>
+      </div>
+
+      <!-- <footer class="" style="position: absolute; top: auto; bottom: auto">
         <div class="container">
           <div class="row cop">
             <p>ALL RIGHT RESEVED TO GITSALAH AND ABDREZAK</p>
           </div>
         </div>
-      </footer>
-      <script src="../js/gitsalah.js"></script>
+      </footer> -->
+      <script src="../js/abderezak.js"></script>
     </body>
 </html>
