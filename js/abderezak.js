@@ -1,6 +1,7 @@
 function show(){
     var all = document.getElementById("mu-search");
     all.style.transform = 'translateY(0) scale(1)';
+    console.log('Hide called');
   }
   function hide(){
     var all = document.getElementById("mu-search");
