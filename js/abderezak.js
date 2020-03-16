@@ -21,9 +21,8 @@ function show(){
     var des = document.createElement("p");
     des.className = "tydes";
     var srcimg = document.getElementById("image").value;
-    var srcname = document.getElementById("name").value;
-    var srctydes = document.getElementById("tymusic").value;
-    var srcdes = document.getElementById("des").value; 
+    var albumName = document.getElementById("nameAlbum").value;
+    var typeAlbum = document.getElementById("typeAlbum").value;
     col.className = "col-md-4";
     art.className = "art";
     imgart.setAttribute("src", srcimg);
@@ -34,13 +33,10 @@ function show(){
     a2.appendChild(name);
     art.appendChild(a2);
     art.appendChild(tydes);
-    art.appendChild(des);
-    name.innerText = srcname;
-    tydes.innerText = srctydes;
-    des.innerText = srcdes;
+    name.innerText = albumName;
+    tydes.innerText = typeAlbum;
     hide();
     document.getElementById("image").value = '';
-    document.getElementById("name").value = '';
-    document.getElementById("tymusic").value = '';
-    document.getElementById("des").value = '';
+    document.getElementById("nameAlbum").value = '';
+    document.getElementById("typeAlbum").value = '';
   }

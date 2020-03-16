@@ -16,6 +16,9 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
         <link rel="stylesheet" href="../css/albums.css">
         <link rel="stylesheet" href="../css/main.css">
+        <link rel="icon" 
+        type="image/png" 
+        href="../img/tidal.png">
     </head>
     <body>
       <!-- ################################################### Navbar Start ################################################### -->
@@ -50,48 +53,32 @@
       </nav>
       <button type="button" onclick="show()" id="btn" class="btn btn-outline-success waves-effect">Add ALBUM</button>
 
-      <!-- Albums -->
       <div class="container">
-        <div class="w-100 d-flex" id="albums" style="margin-top: 35px;">
-          <!-- Martin Garrix ALbum -->
-          <div class="col-md-4 " id="al">
-            <a href="../morceaux/martin.html" class="d-flex flex-wrap">
-              <img class="h-50 w-100" src="../img/albums/martin/album1.png" alt="Martin Garrix">
-              <img class="h-50 w-50" src="../img/albums/martin/album2.jpg" alt="Martin Garrix">
-              <img class="h-50 w-50" src="../img/albums/martin/album3.jpg" alt="Martin Garrix">
-              <!-- <img class="h-50 w-50" src="img/albums/martin/album1.png" alt="Martin Garrix"> -->
-              <h1>GOLD SKIES</h1>
-              <p>Release date:20/02/2019</p>
-            </a>
-          </div>  
+        <div class="row" style="    margin-top: 153px;" id="rwall">
+            <div class="col-md-4">
+                <div class="art">
+                    <a href=""><img src="../img/albums/martin/album1.png" alt=""></a>
+                    <a href=""><h1>Martin Garrix</h1></a>
+                    <p class="des">EDM, electro, musicTrap</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+              <div class="art">
+                  <a href=""><img src="../img/albums/avicci/album1.jpg" alt=""></a>
+                  <a href=""><h1>AVICII</h1></a>
+                  <p class="des">Edm, TRAP, ELECTRO</p>
+              </div>
+          </div>
+          <div class="col-md-4">
+            <div class="art">
+                <a href=""><img src="../img/albums/coldplay/album1.jpg" alt=""></a>
+                <a href=""><h1>COLDPLAY</h1></a>
+                <p class="des">Edm, TRAP, ELECTRO</p>
+               
           
-          <!-- Avicci Album -->
-          <div class="col-md-4" id="al">
-            <a href="../morceaux/avicci.html" class="d-flex flex-wrap">
-              <img class="h-50 w-100" src="../img/albums/avicci/album1.jpg" alt="Avicci">
-              <img class="h-50 w-50" src="../img/albums/avicci/album2.jpg" alt="Avicci">
-              <img class="h-50 w-50" src="../img/albums/avicci/album3.jpg" alt="Avicci">
-              <!-- <img class="h-50 w-50" src="img/albums//album2.jpg" alt="Martin Garrix"> -->
-              <h1>True</h1>
-              
-              <p>Release date:20/02/2019</p>
-            </a>
-          </div>
-
-          <!-- Coldplay Album -->
-          <div class="col-md-4" id="al">
-            <a href="../morceaux/coldplay.html" class="d-flex flex-wrap">
-              <img class="h-50 w-100" src="../img/albums/coldplay/album1.jpg" alt="Coldplay">
-              <img class="h-50 w-50" src="../img/albums/coldplay/album2.jpg" alt="Coldplay">
-              <img class="h-50 w-50" src="../img/albums/coldplay/album3.jpg" alt="Coldplay">
-              <!-- <img class="h-50 w-50" src="img/albums/martin/album3.jpg" alt="Martin Garrix"> -->
-              <h1>Viva Lavida</h1>
-              <p>Release date:20/02/2019</p>
-            </a>
-          </div>
-
+            </div>
         </div>
-
+        </div>
       </div>
       <div id="mu-search" class="mu-search-open">
         <div class="mu-search-area" style="display: flex;
@@ -111,13 +98,13 @@
             <div class="input-group-prepend">
               <span class="input-group-text" id="inputGroup-sizing-default">Name of album</span>
             </div>
-            <input type="text" class="form-control" aria-label="w-100" aria-describedby="inputGroup-sizing-default" id="name">
+            <input type="text" class="form-control" aria-label="w-100" aria-describedby="inputGroup-sizing-default" id="nameAlbum">
           </div>
           <div class="input-group mb-3">
             <div class="input-group-prepend">
               <span class="input-group-text" id="inputGroup-sizing-default">Type album &nbsp &nbsp &nbsp</span>
             </div>
-            <input type="text" class="form-control" aria-label="w-100" aria-describedby="inputGroup-sizing-default" id="tymusic">
+            <input type="text" class="form-control" aria-label="w-100" aria-describedby="inputGroup-sizing-default" id="typeAlbum">
           </div>
           
           <button type="button" id="btn" class="btn btn-outline-success waves-effect" onclick="newArt()">Add an Album</button>
@@ -135,6 +122,6 @@
           </div>
         </div>
       </footer>
-      <script src="../js/gitsalah.js"></script>
+      <script src="../js/abderezak.js"></script>
     </body>
 </html>
