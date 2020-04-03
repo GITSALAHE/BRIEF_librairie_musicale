@@ -1,0 +1,22 @@
+{
+  "artists": [
+    {
+      "id": 1,
+      "name": "Martin Garrix",
+      "img": "img/martin.jpeg",
+      "description": "Since the release of his biggest hit “Animals” in 2013 the Dutch DJ has catapulted himself among the big guns. ... He played trance music, and that was such a new thing, I liked it so much that I bought a shitty DJ set. At ten years old, Garrix began DJing for weddings and small events under the guise DJ Marty. <br> <br> <br>"
+    },
+    {
+      "id": 2,
+      "name": "Avicii",
+      "img": "img/avicii.jpg",
+      "description": "Tim Bergling known professionally as Avicii was a Swedish DJ, electronic musician, and ... In June 2017, British singer Rita Ora debuted a semi-acoustic version of Lonely Together at a private event at Annabel's in London.  <br> <br> <br> <br> <br>"
+    },
+    {
+      "id": 2,
+      "name": "Cold Play",
+      "img": "img/coldplay.jpg",
+      "description": "Coldplay was formed in 1998 at University College, London, with the pairing of pianist-vocalist Chris Martin (b. March 2, 1977, Exeter, England) and guitarist Jonny Buckland (b. September 11, 1977, London). The band was later filled out with fellow students Guy Berryman (b. April 12, 1978, Kirkcaldy, Scotland) on bass and Will Champion (b. July 31, 1978, Southampton, England) "
+    }
+  ]
+}
