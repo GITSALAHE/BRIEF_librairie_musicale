@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+      <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+      <link rel="stylesheet" href="css/main.css">
+      <!-- Font Awesome -->
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+      <script src="https://kit.fontawesome.com/17baba1f70.js" crossorigin="anonymous"></script>
+      <!-- Google Fonts -->
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+      <link rel="shortcut icon" href="img/logo.png" type="image/x-icon">
+      <title><%= title %></title>
+  </head>
+  <style>
+    @media only screen and (max-width: 768px){
+      #homeForm{
+        margin-top: -55px;
+      }
+    }
+  </style>
+<body>
+    <!-- Navbar Start -->
+    <%- include('menu') %>
+    <!-- Navbar End -->
+
+            <!--ARTISTE-->
+            <button type="button" onclick="show()" id="btn" class="btn btn-outline-success waves-effect">Add an Artist</button>
+            <div class="container">
+              <div class="row" style="margin-top: 153px;" id="rwall">
+                  <div class="col-md-4">
+                      <div class="art">
+                          <a href="/martin"><img src="img/justin.jpeg" alt=""></a>
+                          <a href="/martin"><h1>Martin Garrix</h1></a>
+                          <p class="des">Artist, Songwriter, Production, Musician</p>
+                        
+                          <p class="tydes">Part of the explosion of Dutch electronic music producers who emerged during the early 2010s, Martin Garrix spins a bright blend of progressive house, electro, and future bass. He broke through in 2013 with
+                            his international, multi-platinum hit "Animals" from his debut effort, Gold Skies. Topping DJ rank lists in the late 2010s</p>
+      
+                      </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="art">
+                        <a href="/avicci"><img src="img/avicii.jpg" alt=""></a>
+                        <a href="/avicci"><h1>AVICII</h1></a>
+                        <p class="des">Artist, Songwriter, Production, Musician</p>
+                        <p class="tydes">As one of the most popular DJs of the late-2000s EDM boom, Grammy-nominated Swedish producer Avicii rose to the top of the charts in multiple countries and toured the world with his uplifting house
+                          anthems</p>
+                        <br><br> <br>
+    
+                    </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="art">
+                      <a href="/coldplay"><img src="img/coldplay.jpg" alt=""></a>
+                      <a href="/coldplay"><h1>COLDPLAY</h1></a>
+                      <p class="des">Artist, Songwriter, Production, Musician</p>
+                      <p class="tydes">Devon, Wales, Southampton and Fife were the birth places for Chris Martin, Jon Buckland, Will Champion and Guy Berryman respectively, who met whilst they were staying at the same Halls of Residence at
+                        University, formed Coldplay in 1996.</p>
+                <br>
+                <br>
+                  </div>
+              </div>
+
+            <!-- For adding new data -->
+            <% for (let x = 0; x < homeData.data.length; x++){ %>
+             <div class="col-md-4">
+                <div class="art">
+                    <a href="/singer<%= x %>"><img height="250px" src='<%= homeData.data[x].pictureUrl %>' alt='<%= homeData.data[x].pictureUrl %>'></a>
+                    <a href="/singer<%= x %>"><h1><%= homeData.data[x].singerName.toUpperCase() %></h1></a>
+                    <p class="des"><%= homeData.data[x].musicGenre %></p>
+                    <p class="tydes"><%= homeData.data[x].description %>.</p>
+                    <br>
+                    <br>
+                </div>
+              </div>
+            <% }; %>
+
+              </div>
+            </div>
+            <div id="mu-search" class="mu-search-open">
+              <div class="mu-search-area" style="display: flex; justify-content: center; align-items: center;">      
+                <button id="close" class="mu-search-close" onclick="hide()"><span class="fa fa-close"></span></button>
+                <div class="container" style="justify-content: center;">
+                  <div class="row">
+                <div class="col" >
+                  <form action="/homeData" method="POST" id="homeForm">
+                    <div class="input-group mb-3">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text" id="inputGroup-sizing-default">Picture Url</span>
+                      </div>
+                      <input type="text" name="pictureUrl" class="form-control" aria-label="w-100" aria-describedby="inputGroup-sizing-default" id="image">
+                    </div>
+
+                    <div class="input-group mb-3">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text" id="inputGroup-sizing-default">Description</span>
+                      </div>
+                      <input type="text" class="form-control" name="description" aria-label="w-100" aria-describedby="inputGroup-sizing-default" id="des">
+                    </div>
+
+                  <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text" id="inputGroup-sizing-default">Album Name</span>
+                    </div>
+                    <input type="text" name="albumName" class="form-control" aria-label="w-100" aria-describedby="inputGroup-sizing-default" id="name">
+                  </div>
+
+                  <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text" id="inputGroup-sizing-default">Album Date</span>
+                    </div>
+                    <input type="text" name="albumDate" class="form-control" aria-label="w-100" aria-describedby="inputGroup-sizing-default" id="tymusic">
+                  </div>
+
+                  <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text" id="inputGroup-sizing-default">Singer Name</span>
+                    </div>
+                    <input type="text" name="singerName" class="form-control" aria-label="w-100" aria-describedby="inputGroup-sizing-default" id="tymusic">
+                  </div>
+
+                  <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text" id="inputGroup-sizing-default">Born Date</span>
+                    </div>
+                    <input type="text" name="bornDate" class="form-control" aria-label="w-100" aria-describedby="inputGroup-sizing-default" id="tymusic">
+                  </div>
+              
+                  <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text" id="inputGroup-sizing-default">Singer Origin</span>
+                    </div>
+                    <input type="text" name="singerOrigin" class="form-control" aria-label="w-100" aria-describedby="inputGroup-sizing-default" id="tymusic">
+                  </div>
+
+                  <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text" id="inputGroup-sizing-default">Music Genre</span>
+                    </div>
+                    <input type="text" name="musicGenre" class="form-control" aria-label="w-100" aria-describedby="inputGroup-sizing-default" id="tymusic">
+                  </div>
+
+                  <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text" id="inputGroup-sizing-default">Official Site</span>
+                    </div>
+                    <input type="text" name="officialSite" class="form-control" aria-label="w-100" aria-describedby="inputGroup-sizing-default" id="tymusic">
+                  </div>
+
+                    <button style="margin-top: 0px;" type="submit" id="btn" class="btn btn-outline-success waves-effect">Add an Artist</button>
+
+                  </form>
+                </div>
+                </div>
+                </div>
+                </div>
+                </div>
+            </div>
+            <footer>
+              <div class="container">
+                <div class="row cop">
+                  <p>ALL RIGHTS RESEVED TO GITSALAH AND ABDERRAZZAK AND ZINEB OR (GAZ)</p>
+                </div>
+              </div>
+            </footer>
+            <script src="../js/form.js"></script>
+</body>
+</html>

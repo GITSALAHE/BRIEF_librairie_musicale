@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title><%= title %></title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="css/main.css">
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+        <script src="https://kit.fontawesome.com/17baba1f70.js" crossorigin="anonymous"></script>
+        <!-- Google Fonts -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+        <link rel="stylesheet" href="../css/albums.css">
+        <link rel="stylesheet" href="../css/main.css">
+        <link rel="stylesheet" href="../css/media.css">
+        <!-- <link rel="shortcut icon" href="../img/logo.png"> -->
+        
+    </head>
+    <body>
+      <!-- ################################################### Navbar Start ################################################### -->
+      <%- include('menu') %>
+      <!-- ################################################### Navbar END ################################################### -->
+
+      <!-- ################################################### Albums Start ################################################### -->
+      <button type="button" onclick="show()" id="btn" class="btn btn-outline-success waves-effect">Add ALBUM</button>
+      <!-- Albums -->
+      <div class="container">
+        <div class="w-100 alb" id="albums" style="margin-top: 153px;">
+          <!-- Martin Garrix ALbum -->
+          <div class="col-md-4 mt-2">
+            <div class="art">
+              <a href="/martin" class="d-flex flex-wrap">
+                <img class="h-50 w-100" src="../img/albums/martin/album1.png" alt="Martin Garrix">
+                <img class="h-50 w-50" src="../img/albums/martin/album2.jpg" alt="Martin Garrix">
+                <img class="h-50 w-50" src="../img/albums/martin/album3.jpg" alt="Martin Garrix">
+                <!-- <img class="h-50 w-50" src="img/albums/martin/album1.png" alt="Martin Garrix"> -->
+                <div class="container">
+                  <h1>GOLD SKIES</h1>
+                  <p>Release date:20/02/2019</p>
+                </div>
+              </a>
+            </div>
+          </div>  
+          
+          <!-- Avicci Album -->
+          <div class="col-md-4 mt-2">
+            <div class="art">
+              <a href="/avicci" class="d-flex flex-wrap">
+                <img class="h-50 w-100" src="../img/albums/avicci/album1.jpg" alt="Avicci">
+                <img class="h-50 w-50" src="../img/albums/avicci/album2.jpg" alt="Avicci">
+                <img class="h-50 w-50" src="../img/albums/avicci/album3.jpg" alt="Avicci">
+                <!-- <img class="h-50 w-50" src="img/albums//album2.jpg" alt="Martin Garrix"> -->
+                <div class="container">
+                  <h1>TRUE</h1>
+                  <p>Release date:20/02/2019</p>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <!-- Coldplay Album -->
+          <div class="col-md-4 mt-2">
+            <div class="art">
+              <a href="/coldplay" class="d-flex flex-wrap">
+                <img class="h-50 w-100" src="../img/albums/coldplay/album1.jpg" alt="Coldplay">
+                <img class="h-50 w-50" src="../img/albums/coldplay/album2.jpg" alt="Coldplay">
+                <img class="h-50 w-50" src="../img/albums/coldplay/album3.jpg" alt="Coldplay">
+                <!-- <img class="h-50 w-50" src="img/albums/martin/album3.jpg" alt="Martin Garrix"> -->
+                <div class="container">
+                  <h1>VIVA LAVIDA</h1>
+                  <p>Release date:20/02/2019</p>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <!-- For adding new albums -->
+          <% for (let x = 0; x < albums.album.length; x++){ %>
+            <div class="col-md-4 mt-2" style="height: 400px;">
+              <div class="art">
+                <a href="/newAlbum<%= x %>">
+                  <img class="w-100" height="250px" src='<%= albums.album[x].pictureUrl %>' alt='<%= albums.album[x].pictureUrl %>'>
+                  <div class="container">
+                    <h1><%= albums.album[x].albumName.toUpperCase() %></h1>
+                    <p>Release date:<%= albums.album[x].albumDate %></p>
+                  </div>
+                </a>
+              </div>
+            </div>
+          <% }; %>
+
+        </div>
+
+        <!-- For Adding new elements -->
+        <div class="row mt-2" id="rwall"></div>
+
+      </div>
+      <!-- ################################################### Albums END ################################################### -->
+
+      <!-- ################################################### Forms Start ################################################### -->
+      <!-- Forms -->
+      <div id="mu-search" class="mu-search-open">
+        <div class="mu-search-area" style="display: flex;justify-content: center;align-items: center;" id="albumForm">      
+          <button class="mu-search-close" onclick="hide()"><span class="fa fa-close"></span></button>
+          <div class="container" style="justify-content: center;" >
+            <div class="row">
+
+               <div class="col" >
+                    <form action="/albums" method="POST">
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                              <span class="input-group-text" id="inputGroup-sizing-default">Picture Url</span>
+                            </div>
+                            <input type="text" name="pictureUrl" class="form-control" aria-label="w-100" aria-describedby="inputGroup-sizing-default" id="image">
+                        </div>
+
+                        <div class="input-group mb-3">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text" id="inputGroup-sizing-default">Album Name</span>
+                          </div>
+                          <input type="text" name="albumName" class="form-control" aria-label="w-100" aria-describedby="inputGroup-sizing-default" id="name">
+                        </div>
+
+                        <div class="input-group mb-3">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text" id="inputGroup-sizing-default">Album Date</span>
+                          </div>
+                          <input type="text" name="albumDate" class="form-control" aria-label="w-100" aria-describedby="inputGroup-sizing-default" id="tymusic">
+                        </div>
+
+                        <div class="input-group mb-3">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text" id="inputGroup-sizing-default">Singer Name</span>
+                          </div>
+                          <input type="text" name="singerName" class="form-control" aria-label="w-100" aria-describedby="inputGroup-sizing-default" id="tymusic">
+                        </div>
+
+                        <div class="input-group mb-3">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text" id="inputGroup-sizing-default">Born Date</span>
+                          </div>
+                          <input type="text" name="bornDate" class="form-control" aria-label="w-100" aria-describedby="inputGroup-sizing-default" id="tymusic">
+                        </div>
+                    
+                        <div class="input-group mb-3">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text" id="inputGroup-sizing-default">Singer Origin</span>
+                          </div>
+                          <input type="text" name="singerOrigin" class="form-control" aria-label="w-100" aria-describedby="inputGroup-sizing-default" id="tymusic">
+                        </div>
+
+                        <div class="input-group mb-3">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text" id="inputGroup-sizing-default">Music Genre</span>
+                          </div>
+                          <input type="text" name="musicGenre" class="form-control" aria-label="w-100" aria-describedby="inputGroup-sizing-default" id="tymusic">
+                        </div>
+
+                        <div class="input-group mb-3">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text" id="inputGroup-sizing-default">Official Site</span>
+                          </div>
+                          <input type="text" name="officialSite" class="form-control" aria-label="w-100" aria-describedby="inputGroup-sizing-default" id="tymusic">
+                        </div>
+
+                        <input type="submit" id="btn" class="btn btn-outline-success waves-effect" value="Add an Album" style="margin-top: 0px;;">
+
+                    </form>
+               </div>
+
+              </div>
+            </div>
+        </div>
+      </div>
+      <!-- ################################################### Forms END ################################################### -->
+
+      <!-- Scripts for import only -->
+      <script src="../js/form.js"></script>
+
+    </body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title><%= title %></title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+        <link rel="shortcut icon" href="../img/logo.png" type="image/x-icon">
+        <link rel="stylesheet" href="../css/albums.css">
+        <link rel="stylesheet" href="../css/main.css">
+    </head>
+    <body>
+      <!-- ################################################### Navbar Start ################################################### -->
+      <%- include('menu') %>
+      <!-- ################################################### Navbar End ################################################### -->
+
+      <!-- ################################################# Martin Garric Morceaux Start #################################### -->
+      <button type="button" onclick="show()" id="btn" class="btn btn-outline-success waves-effect">Add Song</button>
+
+      <!-- Martin Garrix Morceaux -->
+      <div class="container mt-4">
+
+        <div class="row container">
+            <% for (let i = 0; i < songs.album.length; i++){ %>
+                 <img class="col-lg-6" src="<%= songs.album[i].pictureUrl %>" alt="Martin Garrix Picture">
+              <% }; %>
+            
+            <!-- Infos about albums -->
+            <div class="col border rounded mt-2">
+                <div class="h1 text-white text-center"><%= songs.album[0].singerName %></div>
+                <div class="h4 text-white">Born at <%= songs.album[0].bornDate %></div>
+                <div class="h4 text-white">Origin : <%= songs.album[0].singerOrigin %></div>
+                <div class="h4 text-white">Genres: <%= songs.album[0].musicGenre %></div>
+                <div class="h4 text-white">Album : <%= songs.album[0].albumName %></div>
+                <div class="h4 text-white">Site: <a target="_blank" href="https://<%= songs.album[0].officialSite %>" class="text-white"><%= songs.album[0].officialSite %></a></div>
+            </div>
+        </div>
+
+        <!-- Newly created albums -->
+        <div class="row mt-2 d-flex flex-column">
+            <div class="h1 bg-dark text-white text-center border p-2 mt-2"><%= songs.album[0].albumName %> Album Songs</div>
+
+            <!-- For adding new songs -->
+            <% for (let x = 0; x < newSongs.newSong.length; x++){ %>
+              <div class="mt-2 audios">
+                 <audio class="p-3 mb-2 row h1 rounded w-100" src='<%= newSongs.newSong[x].audioUrl %>' controls></audio> 
+                 <div class="container text-muted h2"><%= newSongs.newSong[x].audioTitle %></div>
+               </div>
+            <% }; %>
+
+        </div>
+      </div>
+      <!-- ################################################# Martin Garrix Morceaux END #################################### -->
+      
+      <!-- ################################################### Forms Start ################################################### -->
+      <!-- Forms -->
+      <div id="mu-search" class="mu-search-open">
+        <div class="mu-search-area" style="display: flex;justify-content: center;align-items: center;">      
+          <button class="mu-search-close" onclick="hide()"><span class="fa fa-close"></span></button>
+          <div class="container" style="justify-content: center;" >
+            <div class="row">
+
+               <div class="col" >
+                    <form action="/newSong" method="POST">
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                              <span class="input-group-text" id="inputGroup-sizing-default">Audio Url</span>
+                            </div>
+                            <input type="text" name="audioUrl" class="form-control" aria-label="w-100" aria-describedby="inputGroup-sizing-default" id="audioUrl">
+                        </div>
+
+                        <div class="input-group mb-3">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text" id="inputGroup-sizing-default">Audio Title</span>
+                          </div>
+                          <input type="text" name="audioTitle" class="form-control" aria-label="w-100" aria-describedby="inputGroup-sizing-default" id="audioTitle">
+                        </div>
+                    
+                        <input type="submit" id="btn" class="btn btn-outline-success waves-effect" value="Create Song">
+                    </form>
+               </div>
+
+              </div>
+            </div>
+        </div>
+      </div>
+      <!-- ################################################### Forms END ################################################### -->
+
+      <!-- Scripts for import only -->
+      <script src="../js/form.js"></script>
+    </body>
+</html>
